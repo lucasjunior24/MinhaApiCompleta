@@ -13,9 +13,11 @@ namespace Dev.Api.Controllers
         private readonly IFornecedorRepository _fornecedorRepository;
         private readonly IMapper _mapper;
 
-        public FornecedoresController(IFornecedorRepository fornecedorRepository)
+        public FornecedoresController(IFornecedorRepository fornecedorRepository,
+                                      IMapper mapper)
         {
             _fornecedorRepository = fornecedorRepository;
+            _mapper = mapper;
         }
 
         public async Task<IEnumerable<FornecedorViewModel>> ObterTodos()
