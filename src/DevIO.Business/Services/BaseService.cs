@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DevIO.Business.Services
 {
-    public abstract class BaseService
+    public abstract class BaseService  
     {
         private readonly INotificador _notificador;
 

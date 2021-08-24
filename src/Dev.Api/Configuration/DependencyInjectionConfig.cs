@@ -15,8 +15,8 @@ namespace Dev.Api.Configuration
         {
             services.AddScoped<MeuDbContext>();
             services.AddScoped<IFornecedorRepository, FornecedorRepository>();
-            services.AddScoped<ProdutoRepository, ProdutoRepository>();
-            services.AddScoped<EnderecoRepository, EnderecoRepository>();
+            services.AddScoped<IProdutoRepository, ProdutoRepository>();
+            services.AddScoped<IEnderecoRepository, EnderecoRepository>();
 
             return services;
         }
