@@ -1,11 +1,9 @@
 ﻿using DevIO.Business.Interfaces;
+using DevIO.Business.Notificacoes;
+using DevIO.Business.Services;
 using DevIO.Data.Context;
 using DevIO.Data.Repository;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Dev.Api.Configuration
 {
@@ -18,6 +16,11 @@ namespace Dev.Api.Configuration
             services.AddScoped<IProdutoRepository, ProdutoRepository>();
             services.AddScoped<IEnderecoRepository, EnderecoRepository>();
 
+            services.AddScoped<INotificador, Notificador>();
+
+            services.AddScoped<IFornecedorService, FornecedorService>();
+            services.AddScoped<IProdutoService, ProdutoService>();
+            //services.AddScoped<IEnderecoService, EnderecoService>();            //services.AddScoped<IEnderecoService, EnderecoService>();
             return services;
         }
     }
