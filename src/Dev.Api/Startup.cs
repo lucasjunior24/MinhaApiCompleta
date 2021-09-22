@@ -41,7 +41,6 @@ namespace Dev.Api
             services.Configure<ApiBehaviorOptions>(options =>
             {
                 options.SuppressModelStateInvalidFilter = true;
-
             });
 
             services.ResolveDependencies();

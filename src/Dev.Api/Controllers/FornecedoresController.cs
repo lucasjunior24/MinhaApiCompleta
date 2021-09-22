@@ -49,8 +49,7 @@ namespace Dev.Api.Controllers
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            var fornecedor = _mapper.Map<Fornecedor>(fornecedorViewModel);
-            await _fornecedorService.Adicionar(fornecedor);
+            await _fornecedorService.Adicionar(_mapper.Map<Fornecedor>(fornecedorViewModel));
 
             return CustomResponse(fornecedorViewModel);
         }
@@ -82,7 +81,6 @@ namespace Dev.Api.Controllers
             return CustomResponse(fornecedorViewModel);
         }
 
-
         [HttpGet("obter-endereco/{id:guid}")]
         public async Task<EnderecoViewModel> ObterEnderecoPorId(Guid id)
         {
@@ -90,7 +88,7 @@ namespace Dev.Api.Controllers
             return enderecoViewModel;
         }
 
-        [HttpGet("atualizar-endereco/{id:guid}")]
+        [HttpPut("atualizar-endereco/{id:guid}")]
         public async Task<ActionResult> AtualizarEndereco(Guid id, EnderecoViewModel enderecoViewModel)
         {
             if (id != enderecoViewModel.Id)
